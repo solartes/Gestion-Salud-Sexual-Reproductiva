@@ -24,6 +24,7 @@ Actualmente la División de Gestión de Salud Integral y Desarrollo Humano utili
 No se requiere instalar hardware.
 
 3. Estudiantes
+
 - José David Muñoz Gómez Correo: davidmu@unicauca.edu.co
 - Camilo Narváez Rivas Correo: camilonar@unicauca.edu.co
 - Julián Esteban Solarte: Correo: julianesolarter@unicauca.edu.co
@@ -31,6 +32,7 @@ No se requiere instalar hardware.
 - Andrés Vidal Zemanate Correo: lenelvidal@unicauca.edu.co
 
 4. Clientes y Tutor
+
 - Tutor: Docente Pablo Augusto Magé Imbachi. Correo: pmage@unicauca.edu.co
 - Tutor Proyecto I: Miguel Angel Niño Zambrano. Correo: manzamb@unicauca.edu.co
 - Cliente: División de Gestión de Salud Integral y Desarrollo Humano de la Universidad del Cauca.
