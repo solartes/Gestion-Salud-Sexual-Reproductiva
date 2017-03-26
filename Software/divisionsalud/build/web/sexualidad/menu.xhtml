@@ -6,24 +6,22 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
       >
-    <head>
-        <h:outputStylesheet name="https://use.fontawesome.com/4f92878ce5.js"/>
-    </head>
+    
     <body>
         <ui:composition>
             <h:form>
                 <p:menu>
-                    <p:submenu label = "Pacientes">
-                        <p:menuitem value="Listar" actionListener="#{cargarVista.cargarVista1()}" icon="fa fa-bed" ajax="false"/>
-                        <p:menuitem value="Registrar" actionListener="#{cargarVista.cargarVista2()}" icon="fa fa-user-plus" ajax="false"/>
+                    <p:submenu label = "Pacientes" >
+                        <p:menuitem value="Listar" actionListener="#{cargarVista.cargarVista1()}" icon=" ui-icon-bookmark" ajax="false"/>
+                        <p:menuitem value="Registrar" actionListener="#{cargarVista.cargarVista2()}" icon="ui-icon-circle-plus" ajax="false"/>
                     </p:submenu>
                     <p:submenu label = "Métodos de planificación">
-                        <p:menuitem value="Iniciar" actionListener="#{cargarVista.cargarVista1()}" icon="ui-icon-disk" ajax="false"/>
-                        <p:menuitem value="Control" actionListener="#{cargarVista.cargarVista2()}" icon="ui-icon-disk" ajax="false"/>
+                        <p:menuitem value="Iniciar" actionListener="#{cargarVista.cargarVista1()}" icon="ui-icon-document-b" ajax="false"/>
+                        <p:menuitem value="Control" actionListener="#{cargarVista.cargarVista2()}" icon="ui-icon-calendar" ajax="false"/>
                     </p:submenu>
                     <p:submenu label = "Informes">
-                        <p:menuitem value="Estadísticas" actionListener="#{cargarVista.cargarVista1()}" icon="ui-icon-disk" ajax="false"/>
-                        <p:menuitem value="Exportar a excel" actionListener="#{cargarVista.cargarVista2()}" icon="ui-icon-disk" ajax="false"/>
+                        <p:menuitem value="Estadísticas" actionListener="#{cargarVista.cargarVista1()}" icon="ui-icon-signal" ajax="false"/>
+                        <p:menuitem value="Exportar a excel" actionListener="#{cargarVista.cargarVista2()}" icon="ui-icon-document" ajax="false"/>
                     </p:submenu>
                 </p:menu>
             </h:form>
