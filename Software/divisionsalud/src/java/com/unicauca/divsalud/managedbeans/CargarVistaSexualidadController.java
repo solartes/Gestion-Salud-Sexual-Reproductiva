@@ -19,6 +19,7 @@ public class CargarVistaSexualidadController implements Serializable
 {
 
     private String ruta; 
+    
     public CargarVistaSexualidadController()
     {
     }
@@ -27,9 +28,9 @@ public class CargarVistaSexualidadController implements Serializable
     {
         ruta = "/usuariodelsistema/profesionalsalud/enComun/paciente/Create.xhtml";
     }
-    public void cargarListarPaciente()
+    public void cargarRegistrarMetodoAnticonceptivo()
     {
-        //ruta = "/usuariodelsistema/profesionalsalud/enComun/paciente/List.xhtml";
+        ruta = "/usuariodelsistema/sexualidad/metodo_planificacion/create.xhtml";
     }
 
     public String getRuta() {
