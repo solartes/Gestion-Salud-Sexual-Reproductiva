@@ -3,18 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/sexualidad/menu.xhtml</file>
+            <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/templates/_visitantetmp.xhtml</file>
             <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/templates/_sexualidadtmp.xhtml</file>
             <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/resources/css/sexualidad.css</file>
             <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/usuariodelsistema/sexualidad/metodo%20planificacion/create.xhtml</file>
             <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/src/java/com/unicauca/divsalud/managedbeans/CargarVistaSexualidadController.java</file>
             <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/WEB-INF/web.xml</file>
             <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/sexualidad/content.xhtml</file>
-=======
-            <file>file:/C:/Users/David/Documents/GitHub/Gestion-Salud-Sexual-Reproductiva/Software/divisionsalud/web/resources/css/visitante.css</file>
-            <file>file:/C:/Users/David/Documents/GitHub/Gestion-Salud-Sexual-Reproductiva/Software/divisionsalud/web/templates/_sexualidadtmp.xhtml</file>
->>>>>>> e5aeeaf35f9b997a183a8222533177f446a1a2ce
         </group>
     </open-files>
 </project-private>
