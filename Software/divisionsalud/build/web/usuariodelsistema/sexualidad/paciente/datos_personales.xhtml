@@ -7,7 +7,7 @@
       xmlns:p="http://primefaces.org/ui">
     
     <h:body>
-        <p:panelGrid id="datos_personales" >
+        <p:panelGrid id="datos_personales">
             <p:row>
                 <p:column>
                     <p:outputLabel style="font-weight:bold;" value="#{bundlePaciente.CreatePacienteLabel_tipoIdentificacion}"/>
@@ -201,6 +201,37 @@
                         <f:selectItem itemLabel="Administrativo" itemValue="Administrativo"/>
                     </p:selectOneMenu> 
                 </p:column>
+            </p:row>
+            <p:row>
+                <p:column style=" font-weight:bold;">
+                        <p:outputLabel value="#{bundlePaciente.CreatePacienteLabel_deptoNacimiento}" for="deptoNacimiento" />
+                        <p:outputLabel style="font-style: italic; font-size: 16px; text-align: left; color: red;"  value="* " />
+                </p:column>
+                <p:column>
+                    <p:selectOneMenu filter="true" id="deptoNacimiento" value="#{pacienteController.deptoNacimiento.id}" 
+                                     valueChangeListener="#{municipioController.seleccionDepartamentoNacimiento}"
+                                     >
+                        <f:selectItems value="#{deptoController.itemsAvailableSelectOne}"
+                                       var="deptoNacimientoItem"
+                                       itemValue="#{deptoNacimientoItem.id}"
+                                       itemLabel="#{deptoNacimientoItem.nombre}"/>
+                        <f:ajax execute="deptoNacimiento" render="municipioNacimiento" />
+                    </p:selectOneMenu>
+                </p:column>
+                <p:column style="font-weight:bold;">
+                    <p:outputLabel value="#{bundlePaciente.CreatePacienteLabel_municipioNacimiento}" for="municipioNacimiento" />
+                    <p:outputLabel style="font-style: italic; font-size: 16px; text-align: left; color: red;"  value="* " />
+                </p:column>
+                <p:column >                        
+                    <p:selectOneMenu filter="true" id="municipioNacimiento" value="#{pacienteController.municipioNacimiento}" >
+                        <f:selectItems value="#{municipioController.listaMunicipioNacimiento}"
+                                       var="municipioNacimientoItem"
+                                       itemValue="#{municipioNacimientoItem}"
+                                       itemLabel="#{municipioNacimientoItem.nombre}"
+                                       />
+                    </p:selectOneMenu>    
+                </p:column>
+                
             </p:row>
         </p:panelGrid>
     </h:body>
