@@ -68,9 +68,11 @@ public class PacienteController implements Serializable {
     private Municipio municipioNacimiento;
     private Depto deptoNacimiento;
     private Parentesco parentesco;
+    
+    private boolean registro;
 
     public PacienteController() {
-
+        registro = false;
     }
 
     @PostConstruct
@@ -98,6 +100,14 @@ public class PacienteController implements Serializable {
         parentesco= new Parentesco();
     }
 
+    public boolean isRegistro() {
+        return registro;
+    }
+
+    public void setRegistro(boolean registro) {
+        this.registro = registro;
+    }
+    
     public Paciente getSelected() {
         return selected;
     }
@@ -313,7 +323,7 @@ public class PacienteController implements Serializable {
     /**
      * REgistra un nuevo paciente utilizando los componentes
      */
-    public void registrarPacienteComponentes() {
+    public void registrarPacienteComponentes(VistaController v) {
         selected.setTipoIdentificacion(tipoIdentificacion);
         selected.setRaza(raza);
         selected.setFacultad(facultad);
@@ -354,6 +364,9 @@ public class PacienteController implements Serializable {
             deptoNacimiento = new Depto();
             parentesco= new Parentesco();
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro de paciente", "El registro del paciente fue exitoso.");
+            registro = true;
+            
+            v.cargarListarPaciente();
             RequestContext.getCurrentInstance().showMessageInDialog(message);
         }
         catch(Exception e)

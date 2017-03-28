@@ -33,7 +33,7 @@
                 <p:tab title="Responsable">
                     <p:panel header="Responsable">
                         <ui:include src="responsable.xhtml"/>
-                        <p:commandButton value="Guardar" actionListener="#{pacienteController.registrarPaciente()}" ajax="true"/>
+                        <p:commandButton value="Guardar" actionListener="#{pacienteController.registrarPacienteComponentes(cargarVistaSexualidad)}" ajax="false"/>
                     </p:panel>
                 </p:tab>
             </p:wizard>

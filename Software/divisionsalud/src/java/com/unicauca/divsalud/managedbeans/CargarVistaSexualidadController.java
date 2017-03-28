@@ -15,15 +15,14 @@ import java.io.Serializable;
  */
 @Named(value = "cargarVistaSexualidad")
 @SessionScoped
-public class CargarVistaSexualidadController implements Serializable
+public class CargarVistaSexualidadController extends VistaController implements Serializable
 {
 
-    private String ruta; 
     
     public CargarVistaSexualidadController()
     {
     }
-    
+    @Override
     public void cargarRegistrarPaciente()
     {
         ruta = "/usuariodelsistema/sexualidad/paciente/create.xhtml";
@@ -40,5 +39,25 @@ public class CargarVistaSexualidadController implements Serializable
     public void setRuta(String ruta) {
         this.ruta = ruta;
     }
-    
+
+    @Override
+    public void cargarEditarPaciente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void cargarVerPaciente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void cargarListarPaciente() {
+        ruta = "/usuariodelsistema/sexualidad/paciente/list.xhtml";
+        System.out.println("ruta "+ruta);
+    }
+
+    @Override
+    public void cargarPerfilUsuario() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

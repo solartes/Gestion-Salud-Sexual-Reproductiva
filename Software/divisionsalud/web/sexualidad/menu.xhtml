@@ -15,7 +15,7 @@
             <h:form>
                 <p:menu id="menu_sexualidad">
                     <p:submenu label = "Pacientes" >
-                        <p:menuitem value="Listar"  icon=" ui-icon-bookmark" ajax="false"/>
+                        <p:menuitem value="Listar"  actionListener="#{cargarVistaSexualidad.cargarListarPaciente()}" icon=" ui-icon-bookmark" ajax="false"/>
                         <p:menuitem value="Registrar" actionListener="#{cargarVistaSexualidad.cargarRegistrarPaciente()}" icon="ui-icon-circle-plus" ajax="false"/>
                     </p:submenu>
                     <p:submenu label = "Métodos de planificación">
