@@ -76,6 +76,7 @@ public class ProgramasController implements Serializable {
     }
 
     public List<Programas> getItems() {
+        //update();
         if (items == null) {
             items = getFacade().findAll();
         }
