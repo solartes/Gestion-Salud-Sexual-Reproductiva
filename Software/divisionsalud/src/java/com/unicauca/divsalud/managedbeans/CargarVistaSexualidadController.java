@@ -26,7 +26,7 @@ public class CargarVistaSexualidadController implements Serializable
     
     public void cargarRegistrarPaciente()
     {
-        ruta = "/usuariodelsistema/profesionalsalud/enComun/paciente/Create.xhtml";
+        ruta = "/usuariodelsistema/sexualidad/paciente/create.xhtml";
     }
     public void cargarRegistrarMetodoAnticonceptivo()
     {
