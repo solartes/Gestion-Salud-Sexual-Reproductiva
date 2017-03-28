@@ -5,10 +5,15 @@
         <group>
             <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/usuariodelsistema/sexualidad/metodo_planificacion/create.xhtml</file>
             <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/sexualidad/menu.xhtml</file>
+            <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/usuariodelsistema/profesionalsalud/enComun/paciente/List.xhtml</file>
+            <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/usuariodelsistema/profesionalsalud/odontologia/estadisticas/indiceCOP.xhtml</file>
             <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/templates/_sexualidadtmp.xhtml</file>
+            <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/src/java/com/unicauca/divsalud/sessionbeans/PacienteFacade.java</file>
             <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/src/java/com/unicauca/divsalud/managedbeans/CargarVistaSexualidadController.java</file>
             <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/usuariodelsistema/sexualidad/metodo_planificacion/antecedentes_personales/create.xhtml</file>
+            <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/src/java/com/unicauca/divsalud/managedbeans/PacienteController.java</file>
             <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/sexualidad/content.xhtml</file>
+            <file>file:/E:/Google%20Drive/Universidad/Noveno%20semestre/Proyecto%20I/Gestion%20salud%20sexual%20y%20reproductiva/Software/divisionsalud/web/usuariodelsistema/profesionalsalud/enComun/paciente/Create.xhtml</file>
         </group>
     </open-files>
 </project-private>
