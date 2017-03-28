@@ -33,13 +33,14 @@ import javax.ejb.EJB;
 import javax.ejb.EJBException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 import javax.faces.event.ValueChangeEvent;
 import org.primefaces.context.RequestContext;
-
+import org.primefaces.context.RequestContext;
 @Named("pacienteController")
 @SessionScoped
 public class PacienteController implements Serializable {
@@ -309,6 +310,62 @@ public class PacienteController implements Serializable {
         items = ejbFacade.findAll();
     }
 
+    /**
+     * REgistra un nuevo paciente utilizando los componentes
+     */
+    public void registrarPacienteComponentes() {
+        selected.setTipoIdentificacion(tipoIdentificacion);
+        selected.setRaza(raza);
+        selected.setFacultad(facultad);
+        selected.setPrograma(programa);
+        selected.setEstadoCivil(estadoCivil);
+        selected.setEscolaridad(escolaridad);
+        selected.setEstrato(estrato);
+        selected.setCategoriaAfiliado(categoriaAfiliado);
+        selected.setTipoAfiliado(tipoAfiliado);
+        selected.setTipoRegimen(tipoRegimen);
+        selected.setEps(eps);
+        selected.setMunicipioResidencia(municipioResidencia);
+        selected.setDeptoResidencia(deptoResidencia);
+        selected.setMunicipioNacimiento(municipioNacimiento);
+        selected.setDeptoNacimiento(deptoNacimiento);
+        selected.setParentesco(parentesco);
+        asignarFechaApertura();
+        try
+        {
+            ejbFacade.create(selected);
+            selected= new Paciente();
+            tipoIdentificacion = new TipoIdentificacion();
+            selected.setSexo('F');
+            selected.setEstado("1");
+            this.raza = new Raza();
+            facultad = new Facultad();
+            programa = new Programas();
+            estadoCivil = new EstadoCivil();
+            escolaridad = new Escolaridad();
+            estrato = new Estrato();
+            categoriaAfiliado = new CategoriaAfiliado();
+            tipoAfiliado = new TipoAfiliado();
+            tipoRegimen = new TipoRegimen();
+            eps = new Eps();
+            municipioResidencia = new Municipio();
+            deptoResidencia = new Depto();
+            municipioNacimiento = new Municipio();
+            deptoNacimiento = new Depto();
+            parentesco= new Parentesco();
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro de paciente", "El registro del paciente fue exitoso.");
+            RequestContext.getCurrentInstance().showMessageInDialog(message);
+        }
+        catch(Exception e)
+        {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro de paciente", "El registro del paciente no ha podido llevarse a cabo.");
+            RequestContext.getCurrentInstance().showMessageInDialog(message);
+        }
+        
+        
+        
+
+    }
     //registro de un nuevo paciente 
     public void registrarPaciente() {
         RequestContext requestContext = RequestContext.getCurrentInstance();

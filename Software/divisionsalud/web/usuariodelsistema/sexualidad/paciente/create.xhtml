@@ -30,6 +30,12 @@
                         <ui:include src="salud.xhtml"/>
                     </p:panel>
                 </p:tab>
+                <p:tab title="Responsable">
+                    <p:panel header="Responsable">
+                        <ui:include src="responsable.xhtml"/>
+                        <p:commandButton value="Guardar" actionListener="#{pacienteController.registrarPaciente()}" ajax="true"/>
+                    </p:panel>
+                </p:tab>
             </p:wizard>
         </h:form>
     </h:body>
