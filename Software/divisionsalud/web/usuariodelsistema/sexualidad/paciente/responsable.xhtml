@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:body>
+        <p:panelGrid>
+            <p:row>
+                <p:column style="font-weight:bold;">
+                    <p:outputLabel value="#{bundlePaciente.CreatePacienteLabel_parentesco}" for="parentesco" />
+                </p:column>
+                <p:column>
+                    <p:selectOneMenu id="parentesco" value="#{pacienteController.parentesco}" >
+                        <f:selectItem itemLabel="Seleccione..." itemValue="0"/>
+                        <f:selectItems value="#{parentescoController.itemsAvailableSelectOne}"
+                               var="parentescoItem"
+                               itemValue="#{parentescoItem}"
+                               itemLabel="#{parentescoItem.nombre}"
+                               />
+                     </p:selectOneMenu>
+                </p:column>
+                <p:column style="font-weight:bold;">
+                    <p:outputLabel value="#{bundlePaciente.CreatePacienteLabel_personaResponsable}"/>
+                    <p:outputLabel style="font-style: italic; font-size: 16px; text-align: left; color: red;"  value="* " />
+                </p:column>
+                <p:column>
+                    <p:inputText id="personaResponsable" 
+                                 value="#{pacienteController.selected.personaResponsable}"
+                                 title="#{bundle.CreatePacienteTitle_personaResponsable}" >
+                                  <f:validator validatorId="ValidarCampoSoloLetrasYespacio"/>
+                                <f:validator validatorId="ValidarCampoObligatorio"/>
+                                <f:validator validatorId="ValidarCampoMaximo20Caracteres"/>
+                                <p:ajax update="msgPersonaResponsable" event ="keyup" />
+                                </p:inputText>
+                </p:column>
+            </p:row>
+            <p:row>
+                <p:column/>
+                <p:column/>
+                <p:column/>
+                <p:column>
+                    <p:message for="personaResponsable" id="msgPersonaResponsable"/> 
+                </p:column>
+            </p:row>
+            <p:row>
+                <p:column style="font-weight:bold;">
+                    <p:outputLabel value="#{bundlePaciente.CreatePacienteLabel_direccionPresponsable}" for="direccionPresponsable" />
+                </p:column>
+                <p:column>
+                    <p:inputText id="direccionPresponsable"
+                                 value="#{pacienteController.selected.direccionPresponsable}"
+                                 title="#{bundlePaciente.CreatePacienteTitle_direccionPresponsable}" />
+                </p:column>
+                <p:column style="font-weight:bold;">
+                    <p:outputLabel value="#{bundlePaciente.CreatePacienteLabel_telefonoPresponsable}"/>
+                </p:column>
+                <p:column>
+                    <p:inputText id="telefonoPresponsable" 
+                                 value="#{pacienteController.selected.telefonoPresponsable}" 
+                                 title="#{bundlePaciente.CreatePacienteTitle_telefonoPresponsable}" >
+                    </p:inputText>
+                </p:column>
+            </p:row>
+        </p:panelGrid>
+    </h:body>
+</html>
+

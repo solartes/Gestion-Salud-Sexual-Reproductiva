@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:body>
+        <p:panelGrid>
+            <p:row>
+                <p:column style="font-weight:bold;black">
+                    <p:outputLabel value="#{bundlePaciente.CreatePacienteLabel_deptoResidencia}" for="deptoResidencia"/>
+                    <p:outputLabel style="font-style: italic; font-size: 16px; text-align: left; color: red;"  value="* " />
+                </p:column>
+                <p:column>
+                    <p:selectOneMenu filter="true" id="deptoResidencia" valueChangeListener="#{municipioController.seleccionDepartamentoResidencia}" value="#{pacienteController.deptoResidencia.id}" >
+                        <f:selectItem itemLabel="Seleccione..." itemValue="0"/>
+                        <f:selectItems value="#{deptoController.itemsAvailableSelectOne}"
+                                       var="deptoResidenciaItem"
+                                       itemValue="#{deptoResidenciaItem.id}"
+                                       itemLabel="#{deptoResidenciaItem.nombre}"                                           
+                                       />
+                        <f:ajax execute="deptoResidencia" render="municipioResidencia" />
+                    </p:selectOneMenu>
+                </p:column>
+                <p:column style="font-weight:bold;">
+                    <p:outputLabel value="#{bundlePaciente.CreatePacienteLabel_municipioResidencia}" for="municipioResidencia" />
+                    <p:outputLabel style="font-style: italic; font-size: 16px; text-align: left; color: red;"  value="* " />
+                </p:column>
+                <p:column>
+                    <p:selectOneMenu filter="true" id="municipioResidencia" value="#{pacienteController.municipioResidencia}" >
+                        <f:selectItem itemLabel="Seleccione..." itemValue="0"/>
+                        <f:selectItems value="#{municipioController.listaMunicipioResidencia}"
+                                       var="municipioResidenciaItem"
+                                       itemValue="#{municipioResidenciaItem}"
+                                       itemLabel="#{municipioResidenciaItem.nombre}"
+                                       />
+                    </p:selectOneMenu>
+                </p:column>
+            </p:row>
+            <p:row>
+                <p:column style="font-weight:bold;">
+                        <p:outputLabel value="#{bundlePaciente.CreatePacienteLabel_direccion}"/>
+                        <p:outputLabel style="font-style: italic; font-size: 16px; text-align: left; color: red;"  value="* " />
+                </p:column>
+                <p:column>
+                    <p:inputText id="direccion" 
+                                 value="#{pacienteController.selected.direccion}" 
+                                 title="#{bundle.CreatePacienteTitle_direccion}" >
+                        <f:validator validatorId="ValidarCampoObligatorio"/>
+                        <p:ajax update="msgDireccionResidencia" event ="keyup" />
+                        </p:inputText>
+                </p:column>
+                <p:column style="font-weight:bold;">
+                    <p:outputLabel value="#{bundlePaciente.CreatePacienteLabel_telefono}"/>
+                </p:column>
+                <p:column>
+                    <p:inputText id="telefono" 
+                                 value="#{pacienteController.selected.telefono}" 
+                                 title="#{bundle.CreatePacienteTitle_telefono}" >
+                        </p:inputText>
+                </p:column>
+            </p:row>   
+            
+            <p:row>
+                <p:column/>
+                <p:column>
+                    <p:message for="direccion" id="msgDireccionResidencia"/> 
+                </p:column>
+                <p:column/>
+                <p:column/>
+            </p:row> 
+                
+        </p:panelGrid>
+    </h:body>
+</html>
+

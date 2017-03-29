@@ -194,17 +194,17 @@
                     <p:column>
                         <p:calendar placeholder="dd/mm/aaaa" id="fechaNacimiento" yearRange="c-80:c" navigator="true" pattern="MM-dd-yyyy" value="#{pacienteController.selected.fechaNacimiento}" title="#{bundle.EditPacienteTitle_fechaNacimiento}"  showOn="button"/>
                     </p:column>
-                    <p:column>
-                        <p:selectOneMenu id="estadoCivil" value="#{pacienteController.estadoCivil}" >
-                            <f:selectItem itemLabel="Seleccione..." itemValue="0"/>
-                            <f:selectItems value="#{estadoCivilController.itemsAvailableSelectOne}"
-                                           var="estadoCivilItem"
-                                           itemValue="#{estadoCivilItem}"
-                                           itemLabel="#{estadoCivilItem.nombre}"
-                                           />
+                        <p:column>
+                            <p:selectOneMenu id="estadoCivil" value="#{pacienteController.estadoCivil}" >
+                                <f:selectItem itemLabel="Seleccione..." itemValue="0"/>
+                                <f:selectItems value="#{estadoCivilController.itemsAvailableSelectOne}"
+                                               var="estadoCivilItem"
+                                               itemValue="#{estadoCivilItem}"
+                                               itemLabel="#{estadoCivilItem.nombre}"
+                                               />
 
-                        </p:selectOneMenu>
-                    </p:column>
+                            </p:selectOneMenu>
+                        </p:column>
                     <p:column>
                         <p:selectOneMenu id="estrato" value="#{pacienteController.estrato}" >
                             <f:selectItem itemLabel="Seleccione..." itemValue="0"/>
