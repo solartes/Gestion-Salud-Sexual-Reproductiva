@@ -23,6 +23,8 @@ import com.unicauca.divsalud.sessionbeans.PacienteFacade;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -67,13 +69,13 @@ public class PacienteController implements Serializable {
     private Depto deptoResidencia;
     private Municipio municipioNacimiento;
     private Depto deptoNacimiento;
-    private Parentesco parentesco;
-    
-    private boolean registro;
+    private Parentesco parentesco;    
 
     public PacienteController() {
-        registro = false;
+        
     }
+
+       
 
     @PostConstruct
     public void init() {
@@ -82,6 +84,8 @@ public class PacienteController implements Serializable {
         selected.setSexo('F');
         selected.setEstado("1");
         selected.setZonaResidencia('U');
+        Calendar cal = Calendar.getInstance();
+        selected.setFechaNacimiento(new Date(cal.getTime().getYear()-20,Calendar.JANUARY,1));
         this.tipoIdentificacion = new TipoIdentificacion();
         this.raza = new Raza();
         facultad = new Facultad();
@@ -100,14 +104,7 @@ public class PacienteController implements Serializable {
         parentesco= new Parentesco();
     }
 
-    public boolean isRegistro() {
-        return registro;
-    }
-
-    public void setRegistro(boolean registro) {
-        this.registro = registro;
-    }
-    
+   
     public Paciente getSelected() {
         return selected;
     }
@@ -364,7 +361,6 @@ public class PacienteController implements Serializable {
             deptoNacimiento = new Depto();
             parentesco= new Parentesco();
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro de paciente", "El registro del paciente fue exitoso.");
-            registro = true;
             
             v.cargarListarPaciente();
             RequestContext.getCurrentInstance().showMessageInDialog(message);
@@ -472,6 +468,8 @@ public void editarPaciente() {
         selected = new Paciente();
         selected.setSexo('F');
         selected.setEstado("1");
+        Calendar cal = Calendar.getInstance();
+        selected.setFechaNacimiento(new Date(cal.getTime().getYear()-20,Calendar.JANUARY,1));
         this.tipoIdentificacion = new TipoIdentificacion();
         this.raza = new Raza();
         facultad = new Facultad();
