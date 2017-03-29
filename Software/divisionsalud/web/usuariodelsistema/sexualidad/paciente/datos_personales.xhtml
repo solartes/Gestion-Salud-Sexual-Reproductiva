@@ -158,7 +158,10 @@
                     <p:outputLabel style="font-style: italic; font-size: 16px; text-align: left; color: red;"  value="* " />
                 </p:column>
                 <p:column>
-                    <p:calendar   required="true" readonly="true" readonlyInput="false" placeholder="dd/mm/aaaa" id="fechaNacimiento" yearRange="c-80:c" navigator="true" pattern="MM-dd-yyyy" value="#{pacienteController.selected.fechaNacimiento}" title="#{bundle.EditPacienteTitle_fechaNacimiento}"  showOn="button"/>
+                    <p:calendar   required="true" readonly="true" readonlyInput="false" placeholder="dd/mm/aaaa" id="fechaNacimiento" yearRange="c-80:c" navigator="true" pattern="MM-dd-yyyy" value="#{pacienteController.selected.fechaNacimiento}" title="#{bundle.EditPacienteTitle_fechaNacimiento}"  showOn="button">
+                        <f:validator validatorId="validar_fecha"/>
+                        <p:ajax update="msg_fecha_nacimiento" event ="click" />
+                    </p:calendar>
                 </p:column>
                 <p:column>
                     <p:outputLabel style="font-weight:bold;" value="#{bundlePaciente.CreatePacienteLabel_estadoCivil}" for="estadoCivil" />
@@ -173,6 +176,14 @@
                                        />
                     </p:selectOneMenu>
                 </p:column>
+            </p:row>
+            <p:row>
+                <p:column/>
+                <p:column>
+                    <p:message for="fechaNacimiento" id="msg_fecha_nacimiento"/> 
+                </p:column>
+                <p:column/>
+                <p:column/>
             </p:row>
             <p:row>
                 <p:column>
