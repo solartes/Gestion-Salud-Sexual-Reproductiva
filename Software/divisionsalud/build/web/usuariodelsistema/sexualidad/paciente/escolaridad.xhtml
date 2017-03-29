@@ -5,16 +5,28 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-    
+    <script>
+        function handleChangeEscolaridad(selection) {
+            if (selection == 10) {
+                PF('selectOneMenuFacultad').enable();
+                PF('selectOneMenuPrograma').enable();
+            } else {
+                PF('selectOneMenuFacultad').disable();
+                PF('selectOneMenuFacultad').disable();
+                
+                PF('selectOneMenuPrograma').disable();
+            }
+        }
+    </script>
     <h:body>
-        <p:panelGrid >
+        <p:panelGrid styleClass="gridsinbordes">
             <p:row>
                 <p:column style="font-weight:bold;">
                     <p:outputLabel value="#{bundlePaciente.CreatePacienteLabel_escolaridad}" for="escolaridad" />
                     <p:outputLabel style="font-style: italic; font-size: 16px; text-align: left; color: red;"  value="* " />
                 </p:column>
                 <p:column>
-                    <p:selectOneMenu id="escolaridad" value="#{pacienteController.escolaridad}" >
+                    <p:selectOneMenu  onchange="handleChangeEscolaridad(this.value)" required="true" id="escolaridad" value="#{pacienteController.escolaridad}" >
                         <f:selectItems value="#{escolaridadController.itemsAvailableSelectOne}"
                                        var="escolaridadItem"
                                        itemValue="#{escolaridadItem}"
@@ -29,10 +41,10 @@
                     <p:outputLabel style="font-style: italic; font-size: 16px; text-align: left; color: red;"  value="* " />
                 </p:column>
                 <p:column>
-                    <p:selectOneMenu filter="true" id="facultad" 
+                    <p:selectOneMenu  widgetVar="selectOneMenuFacultad" required="true" filter="true" id="facultad" 
                                      value="#{pacienteController.facultad.id}" 
                                      valueChangeListener="#{programasController.seleccionPrograma}" >
-                        <f:selectItem itemLabel="Seleccione..." itemValue="0"/>
+                        <f:selectItem itemLabel="Seleccione..." itemValue="#{null}"/>
                         <f:selectItems value="#{facultadController.itemsAvailableSelectOne}"
                                        var="facultadItem"
                                        itemValue="#{facultadItem.id}"
@@ -48,14 +60,14 @@
                     <p:outputLabel style="font-style: italic; font-size: 16px; text-align: left; color: red;"  value="* " />
                 </p:column>
                 <p:column>
-                        <p:selectOneMenu filter="true" id="programa" value="#{pacienteController.programa}" >
-                            <f:selectItem itemLabel="Seleccione..." itemValue="0"/>
-                            <f:selectItems value="#{programasController.items}"
-                                           var="programaItem"
-                                           itemValue="#{programaItem}"
-                                           itemLabel="#{programaItem.nombre}"
-                                           />
-                        </p:selectOneMenu>
+                    <p:selectOneMenu  widgetVar="selectOneMenuPrograma" required="true" filter="true" id="programa" value="#{pacienteController.programa}" >
+                        <f:selectItem itemLabel="Seleccione..." itemValue="#{null}"/>
+                        <f:selectItems value="#{programasController.items}"
+                                       var="programaItem"
+                                       itemValue="#{programaItem}"
+                                       itemLabel="#{programaItem.nombre}"
+                                       />
+                    </p:selectOneMenu>
                 </p:column>
             </p:row>
         </p:panelGrid>

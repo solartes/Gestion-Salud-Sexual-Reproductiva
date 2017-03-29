@@ -10,7 +10,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet name="./css/default.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
-
         <title>Salud sexual y reproductiva</title>
     </h:head>
 
@@ -31,14 +30,17 @@
 
         <div>
             <div>
-                <div id="menu_sexualidad" style="float:left; margin-left: 20px;">
+                <div id="menu_sexualidad" style="float:left; margin-left: 20px; margin-top:55px">
+                    <div class="ui-messages-info ">
+                        <span class="ui-messages-info-detail"><b>Menu Usuario</b></span>
+                    </div>
                     <ui:insert name="left" >
                         <ui:include src="../sexualidad/menu.xhtml"></ui:include>
                     </ui:insert>
-                
+
                 </div>
-                
-                <div id="contenido_sexualidad" style="float:left ; margin-left: 10px;">
+
+                <div id="contenido_sexualidad" style=" width: 80%; float:left ; margin-left: 10px;">
                     <ui:insert name="content">
                         <ui:include src="../sexualidad/content.xhtml"></ui:include>
                     </ui:insert>
