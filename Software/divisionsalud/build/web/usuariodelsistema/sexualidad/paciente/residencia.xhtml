@@ -9,6 +9,15 @@
     <h:body>
         <p:panelGrid styleClass="gridsinbordes" >
             <p:row>
+                <p:column/>
+                <p:column/>
+                <p:column/>
+                <p:column colspan="4">
+                   <p:outputLabel style="font-weight:bold; font-size: 14px;" value="Campos obligatorios"/>
+                    <p:outputLabel style="font-style: italic; font-size: 16px; text-align: left; color: red;"  value="* " />
+                </p:column>
+            </p:row>
+            <p:row>
                 <p:column style="font-weight:bold;black">
                     <p:outputLabel value="#{bundlePaciente.CreatePacienteLabel_deptoResidencia}" for="deptoResidencia"/>
                     <p:outputLabel style="font-style: italic; font-size: 16px; text-align: left; color: red;"  value="* " />
@@ -69,7 +78,7 @@
                 <p:column/>
                 <p:column/>
             </p:row> 
-                
+               
         </p:panelGrid>
     </h:body>
 </html>
