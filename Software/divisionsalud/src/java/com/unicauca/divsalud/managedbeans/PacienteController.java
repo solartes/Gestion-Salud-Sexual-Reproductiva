@@ -371,6 +371,21 @@ public class PacienteController implements Serializable {
     {
         try
         {
+            selected.setTipoIdentificacion(tipoIdentificacion);
+            selected.setFacultad(facultad);
+            selected.setPrograma(programa);
+            selected.setEstadoCivil(estadoCivil);
+            selected.setEscolaridad(escolaridad);
+            selected.setEstrato(estrato);
+            selected.setCategoriaAfiliado(categoriaAfiliado);
+            selected.setTipoAfiliado(tipoAfiliado);
+            selected.setTipoRegimen(tipoRegimen);
+            selected.setEps(eps);
+            selected.setMunicipioResidencia(municipioResidencia);
+            selected.setDeptoResidencia(deptoResidencia);
+            selected.setMunicipioNacimiento(municipioNacimiento);
+            selected.setDeptoNacimiento(deptoNacimiento);
+            selected.setParentesco(parentesco);
             ejbFacade.edit(selected);
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Edición de paciente", "Los cambios en la información del paciente fueron guardados con éxito.");
             v.cargarListarPaciente();
