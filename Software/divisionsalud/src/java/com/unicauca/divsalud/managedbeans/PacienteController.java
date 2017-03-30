@@ -69,13 +69,14 @@ public class PacienteController implements Serializable {
     private Depto deptoResidencia;
     private Municipio municipioNacimiento;
     private Depto deptoNacimiento;
-    private Parentesco parentesco;    
+    private Parentesco parentesco;  
+    
+    private boolean facultad_seleccionada;
 
-    public PacienteController() {
-        
+    public PacienteController()
+    {
+        facultad_seleccionada = false;
     }
-
-       
 
     @PostConstruct
     public void init() {
@@ -104,6 +105,16 @@ public class PacienteController implements Serializable {
         parentesco= new Parentesco();
     }
 
+    public boolean isFacultad_seleccionada() {
+        return facultad_seleccionada;
+    }
+    public void seleccionar_facultad()
+    {
+        facultad_seleccionada = true;
+    }
+    public void setFacultad_seleccionada(boolean facultad_seleccionada) {
+        this.facultad_seleccionada = facultad_seleccionada;
+    }
    
     public Paciente getSelected() {
         return selected;

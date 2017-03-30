@@ -15,7 +15,6 @@
                 </p:column>
                 <p:column>
                     <p:selectOneMenu required="true" filter="true" id="deptoResidencia" valueChangeListener="#{municipioController.seleccionDepartamentoResidencia}" value="#{pacienteController.deptoResidencia.id}" >
-                        <f:selectItem itemLabel="Seleccione..." itemValue="#{null}"/>
                         <f:selectItems value="#{deptoController.itemsAvailableSelectOne}"
                                        var="deptoResidenciaItem"
                                        itemValue="#{deptoResidenciaItem.id}"
@@ -30,7 +29,6 @@
                 </p:column>
                 <p:column>
                     <p:selectOneMenu required="true" filter="true" id="municipioResidencia" value="#{pacienteController.municipioResidencia}" >
-                        <f:selectItem itemLabel="Seleccione..." itemValue="#{null}"/>
                         <f:selectItems value="#{municipioController.listaMunicipioResidencia}"
                                        var="municipioResidenciaItem"
                                        itemValue="#{municipioResidenciaItem}"
