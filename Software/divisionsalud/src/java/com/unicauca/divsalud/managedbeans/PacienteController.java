@@ -352,27 +352,8 @@ public class PacienteController implements Serializable {
         try
         {
             ejbFacade.create(selected);
-            selected= new Paciente();
-            tipoIdentificacion = new TipoIdentificacion();
-            selected.setSexo('F');
-            selected.setEstado("1");
-            this.raza = new Raza();
-            facultad = new Facultad();
-            programa = new Programas();
-            estadoCivil = new EstadoCivil();
-            escolaridad = new Escolaridad();
-            estrato = new Estrato();
-            categoriaAfiliado = new CategoriaAfiliado();
-            tipoAfiliado = new TipoAfiliado();
-            tipoRegimen = new TipoRegimen();
-            eps = new Eps();
-            municipioResidencia = new Municipio();
-            deptoResidencia = new Depto();
-            municipioNacimiento = new Municipio();
-            deptoNacimiento = new Depto();
-            parentesco= new Parentesco();
+            limpiarCampos();
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro de paciente", "El registro del paciente fue exitoso.");
-            
             v.cargarListarPaciente();
             RequestContext.getCurrentInstance().showMessageInDialog(message);
         }
@@ -385,6 +366,23 @@ public class PacienteController implements Serializable {
         
         
 
+    }
+    public void editarComponente(VistaController v)
+    {
+        try
+        {
+            ejbFacade.edit(selected);
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Edición de paciente", "Los cambios en la información del paciente fueron guardados con éxito.");
+            v.cargarListarPaciente();
+            RequestContext.getCurrentInstance().showMessageInDialog(message);
+            limpiarCampos();
+        }
+        catch(Exception e)
+        {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Edición de paciente", "Los cambios en la información del paciente NO fueron guardados con éxito.");
+            RequestContext.getCurrentInstance().showMessageInDialog(message);
+        }
+        
     }
     //registro de un nuevo paciente 
     public void registrarPaciente() {
@@ -474,6 +472,8 @@ public void editarPaciente() {
         requestContext.execute("PF('ActualizacionExitosa').show()");
 
     }
+
+    
 
     public void limpiarCampos() {
         selected = new Paciente();
