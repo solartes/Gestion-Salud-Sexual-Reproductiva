@@ -17,7 +17,7 @@ public abstract class VistaController{
 
     public abstract void cargarRegistrarPaciente();
 
-    public abstract void cargarEditarPaciente();
+    public abstract void cargarEditarPaciente(PacienteController c,int id);
 
     public abstract void cargarVerPaciente();
     

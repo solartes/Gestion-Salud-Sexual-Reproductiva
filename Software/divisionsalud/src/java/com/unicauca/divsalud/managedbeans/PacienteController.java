@@ -557,7 +557,12 @@ public void editarPaciente() {
             }
         }
     }
-
+    
+    public void cargarPaciente(int id)
+    {
+        selected = getFacade().find(id);
+    }
+    
     public Paciente getPaciente(java.lang.Integer id) {
         return getFacade().find(id);
     }

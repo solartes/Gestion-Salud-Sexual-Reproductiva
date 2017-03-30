@@ -41,8 +41,13 @@ public class CargarVistaSexualidadController extends VistaController implements 
     }
 
     @Override
-    public void cargarEditarPaciente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void cargarEditarPaciente(PacienteController c,int id) {
+        if(c!=null)
+        {
+            c.cargarPaciente(id);
+            ruta = "/usuariodelsistema/sexualidad/paciente/edit.xhtml";
+        }
+        
     }
 
     @Override
